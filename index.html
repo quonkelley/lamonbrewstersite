@@ -49,22 +49,22 @@
     />
   </head>
 
-  <body class="bg-gray-900 text-white font-roboto">
+  <body class="bg-gray-900 text-white font-roboto overflow-x-hidden">
     <!-- Navbar -->
     <nav
       class="fixed top-0 inset-x-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800"
     >
       <div
-        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16"
+        class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 min-w-0"
       >
-        <div class="flex items-center space-x-2">
+        <a href="#home" class="min-w-0 flex-shrink-0">
           <span
-            class="font-oswald text-xl tracking-[0.25em] uppercase text-yellow-500"
+            class="font-oswald text-lg sm:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase text-yellow-500 truncate block"
           >
             Lamon Brewster
           </span>
-        </div>
-        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium flex-shrink-0">
           <a
             href="#home"
             class="hover:text-yellow-400 transition-colors"
@@ -108,15 +108,37 @@
             Contact
           </a>
         </div>
-        <!-- Simple mobile menu: inline links -->
-        <div class="md:hidden flex items-center space-x-3 text-xs">
-          <a href="#home" class="hover:text-yellow-400">Home</a>
-          <a href="#about" class="hover:text-yellow-400">About</a>
-          <a href="#services" class="hover:text-yellow-400">Services</a>
-          <a href="#coffee-line" class="hover:text-yellow-400">Coffee</a>
-          <a href="#brewsters-place" class="hover:text-yellow-400">Brewster&apos;s</a>
-          <a href="#contact" class="hover:text-yellow-400">Contact</a>
+        <!-- Mobile: hamburger button -->
+        <div class="md:hidden flex-shrink-0 ml-2">
+          <button
+            type="button"
+            id="mobile-menu-button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+            class="p-2 rounded-lg text-gray-300 hover:text-yellow-400 hover:bg-gray-800 transition"
+          >
+            <i id="mobile-menu-icon-open" class="fas fa-bars text-xl"></i>
+            <i id="mobile-menu-icon-close" class="fas fa-times text-xl hidden" aria-hidden="true"></i>
+          </button>
         </div>
+      </div>
+      <!-- Mobile dropdown menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden absolute top-full left-0 right-0 bg-gray-900 border-b border-gray-800 shadow-xl z-40"
+        role="dialog"
+        aria-label="Navigation menu"
+      >
+        <nav class="px-4 py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
+          <a href="#home" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Home</a>
+          <a href="#about" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">About</a>
+          <a href="#services" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Training Services</a>
+          <a href="#gym" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">The Gym</a>
+          <a href="#coffee-line" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Coffee Line</a>
+          <a href="#brewsters-place" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Brewster's Place</a>
+          <a href="#contact" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Contact</a>
+        </nav>
       </div>
     </nav>
 
@@ -127,7 +149,7 @@
         class="relative min-h-screen flex items-center justify-center"
       >
         <div
-          class="absolute inset-0 bg-[url('assets/lamon-brewster-hero-pic-1.webp')] bg-cover bg-top"
+          class="absolute inset-0 bg-[url('assets/lamon-brewster-hero-pic-1.webp')] bg-contain bg-center md:bg-cover md:bg-top bg-no-repeat bg-gray-900"
           aria-hidden="true"
         ></div>
         <div class="absolute inset-0 bg-black/80"></div>
@@ -699,6 +721,40 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var button = document.getElementById('mobile-menu-button');
+        var menu = document.getElementById('mobile-menu');
+        var iconOpen = document.getElementById('mobile-menu-icon-open');
+        var iconClose = document.getElementById('mobile-menu-icon-close');
+        if (!button || !menu) return;
+
+        function openMenu() {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+          button.setAttribute('aria-label', 'Close menu');
+          iconOpen.classList.add('hidden');
+          iconClose.classList.remove('hidden');
+        }
+        function closeMenu() {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-label', 'Open menu');
+          iconOpen.classList.remove('hidden');
+          iconClose.classList.add('hidden');
+        }
+
+        button.addEventListener('click', function () {
+          if (menu.classList.contains('hidden')) openMenu();
+          else closeMenu();
+        });
+
+        menu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+      })();
+    </script>
   </body>
 </html>
 
