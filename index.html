@@ -6,7 +6,7 @@
     <title>Lamon Brewster | Heavyweight Champion Training</title>
     <meta
       name="description"
-      content="Train with Retired World Heavyweight Champion Lamon Brewster. Elite boxing and fitness training for youth and adults."
+      content="Mind of a Champion. Lamon Brewster—Elite Boxing Level Training and World Class Fitness. Skillset development and a timeless foundation for youth and adults."
     />
 
     <!-- Google Fonts -->
@@ -47,6 +47,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       referrerpolicy="no-referrer"
     />
+    <!-- Swiper (carousel) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <style>
+      .visuals-swiper .swiper-button-next:after,
+      .visuals-swiper .swiper-button-prev:after { color: #eab308; }
+      .visuals-swiper .swiper-pagination-bullet { background: rgba(234, 179, 8, 0.5); }
+      .visuals-swiper .swiper-pagination-bullet-active { background: #eab308; }
+    </style>
   </head>
 
   <body class="bg-gray-900 text-white font-roboto overflow-x-hidden">
@@ -102,6 +111,12 @@
             Brewster&apos;s Place
           </a>
           <a
+            href="#visuals"
+            class="hover:text-yellow-400 transition-colors"
+          >
+            Visuals
+          </a>
+          <a
             href="#contact"
             class="hover:text-yellow-400 transition-colors"
           >
@@ -137,12 +152,13 @@
           <a href="#gym" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">The Gym</a>
           <a href="#coffee-line" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Coffee Line</a>
           <a href="#brewsters-place" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Brewster's Place</a>
+          <a href="#visuals" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Visuals</a>
           <a href="#contact" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Contact</a>
         </nav>
       </div>
     </nav>
 
-    <main class="pt-16">
+    <main class="pt-16 min-w-0">
       <!-- Hero Section -->
       <section
         id="home"
@@ -161,12 +177,11 @@
           <h1
             class="font-oswald text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight mb-4"
           >
-            Train With A
-            <span class="text-yellow-500">Heavyweight Champion</span>
+            <span class="text-yellow-500">Mind of a Champion</span>
           </h1>
           <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl">
-            Elite Boxing &amp; Fitness Training for youth and adults.
-            Strength, discipline, and championship mindset in every session.
+            Elite Boxing Level Training &amp; World Class Fitness for youth and adults.
+            Secrets of the trade, skillset development, and a timeless foundation in every session.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 sm:items-center">
             <a
@@ -179,6 +194,79 @@
               Youth (8–17) &amp; Adults (18+) welcome.
             </p>
           </div>
+        </div>
+      </section>
+
+      <!-- Visuals: Video Carousel (~20% visual weight) -->
+      <section
+        id="visuals"
+        class="scroll-mt-24 py-12 sm:py-16 bg-gray-950/80 border-y border-gray-800/80"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-8">
+            <p class="text-xs uppercase tracking-[0.35em] text-yellow-500 mb-2">
+              In Action
+            </p>
+            <h2 class="font-oswald text-2xl sm:text-3xl font-semibold">
+              Lamon &amp; His Work
+            </h2>
+          </div>
+          <div class="swiper visuals-swiper rounded-2xl overflow-hidden border border-gray-700 shadow-xl max-h-[38vh] sm:max-h-[42vh]">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="relative w-full h-full min-h-[240px] sm:min-h-[280px] bg-gray-800 flex items-center justify-center">
+                  <video
+                    class="w-full h-full object-cover"
+                    poster="assets/lamon-brewster-training-1.webp"
+                    playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    aria-label="Training clip 1"
+                  >
+                    <!-- Add your MP4: <source src="assets/clip1.mp4" type="video/mp4" /> -->
+                  </video>
+                  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="rounded-full bg-black/50 p-4 text-white"><i class="fas fa-play text-2xl"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="relative w-full h-full min-h-[240px] sm:min-h-[280px] bg-gray-800 flex items-center justify-center">
+                  <video
+                    class="w-full h-full object-cover"
+                    poster="assets/lamon-brewster-training-3.webp"
+                    playsinline
+                    muted
+                    loop
+                    preload="metadata"
+                    aria-label="Training clip 2"
+                  >
+                    <!-- Add your MP4: <source src="assets/clip2.mp4" type="video/mp4" /> -->
+                  </video>
+                  <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="rounded-full bg-black/50 p-4 text-white"><i class="fas fa-play text-2xl"></i></span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="relative w-full h-full min-h-[240px] sm:min-h-[280px] bg-gray-800 flex items-center justify-center">
+                  <img
+                    src="assets/lamon-brewster-profuile.jpg"
+                    alt="Lamon Brewster"
+                    class="w-full h-full object-cover"
+                  />
+                  <div class="absolute bottom-2 right-2 text-xs text-gray-400">Add more clips</div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+            <div class="swiper-button-prev after:!text-yellow-500"></div>
+            <div class="swiper-button-next after:!text-yellow-500"></div>
+          </div>
+          <p class="text-center text-xs text-gray-500 mt-3">
+            Short clips from the gym. Add your MP4s to the video elements in the carousel.
+          </p>
         </div>
       </section>
 
@@ -204,23 +292,22 @@
                 <span>About Lamon Brewster</span>
               </h2>
               <p class="text-sm uppercase tracking-[0.2em] text-yellow-500 mb-4">
-                Heavyweight Legacy. Champion Mindset.
+                Professional Experience. Secrets of the Trade.
               </p>
               <p class="text-gray-300 mb-4 leading-relaxed">
                 Lamon Brewster is a Retired World Heavyweight Champion,
                 known for his grit, knockout power, and relentless work ethic
-                in the ring. He has shared the ring with the best in the world.
+                in the ring. He has shared the ring with the best in the world—and
+                brings that professional experience to every session.
               </p>
               <p class="text-gray-300 mb-4 leading-relaxed">
                 Beyond boxing, Lamon has built Brewster's Place, collaborates
                 with the Nevada Boxing Hall of Fame (NVBHOF), and created The
-                Champion's Brew coffee line—bringing championship mindset from
-                the gym into business and community.
+                Champion's Brew coffee line. His programs focus on skillset development
+                and a timeless foundation: discipline, technique, and the mind of a champion.
               </p>
               <p class="text-gray-300 leading-relaxed">
-                His training programs carry that same standard: discipline,
-                confidence, and learning how to think like a champion—in and
-                out of the ring.
+                Elite boxing level training and world class fitness—in and out of the ring.
               </p>
             </div>
           </div>
@@ -238,12 +325,11 @@
               Training Services
             </p>
             <h2 class="font-oswald text-3xl sm:text-4xl font-semibold mb-3">
-              Train Like A Champion
+              Elite Boxing Level Training
             </h2>
             <p class="text-gray-300 max-w-2xl mx-auto">
-              Focused, high-intensity sessions built around your goals—whether
-              it’s getting in the best shape of your life or preparing for
-              serious competition.
+              World class fitness and a timeless foundation. High-intensity sessions
+              built around your goals—skillset development, technique, and the mind of a champion.
             </p>
           </div>
 
@@ -273,13 +359,13 @@
               </div>
               <p class="text-gray-300 mb-4">
                 One-on-one, hands-on training in the ring with Lamon Brewster, Retired World
-                Heavyweight Champion. Pad work, mitts, footwork, and conditioning
-                tailored to your level—build strength, fitness, and real technique.
+                Heavyweight Champion. Elite boxing level training: pad work, mitts, footwork,
+                and conditioning with a timeless foundation—technique that lasts.
               </p>
               <ul class="text-gray-300 text-sm space-y-2 mb-5">
                 <li>• Hands-on pad work and mitt drills in the ring</li>
-                <li>• Footwork and movement tailored to your level</li>
-                <li>• Conditioning, strength, and weight loss focus</li>
+                <li>• Footwork and movement—skillset development at your level</li>
+                <li>• World class fitness: conditioning, strength, and focus</li>
               </ul>
               <div class="flex flex-wrap gap-2 mb-3">
                 <span
@@ -315,8 +401,8 @@
               </div>
               <p class="text-gray-300 mb-4">
                 Behavior-based training focused on discipline, accountability,
-                and habits that carry from the gym into life. Structured sessions
-                with Lamon to build focus, self-control, and follow-through.
+                and the mind of a champion. Secrets of the trade and skillset development
+                that carry from the gym into life—focus, self-control, and follow-through.
               </p>
               <ul class="text-gray-300 text-sm space-y-2 mb-5">
                 <li>• Discipline and accountability</li>
@@ -384,6 +470,88 @@
         </div>
       </section>
 
+      <!-- Pricing Section -->
+      <section
+        id="pricing"
+        class="scroll-mt-24 py-16 sm:py-20 bg-gray-900 border-b border-gray-800/80"
+      >
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-10">
+            <p class="text-xs uppercase tracking-[0.35em] text-yellow-500 mb-3">
+              Pricing
+            </p>
+            <h2 class="font-oswald text-3xl sm:text-4xl font-semibold mb-3">
+              Group &amp; Personal Training Rates
+            </h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+              Pricing overview for training at Lamon Brewster's gym. A consultation is still
+              required before payment to confirm the right program, schedule, and fit.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 lg:gap-10">
+            <!-- Group Training -->
+            <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/40">
+              <h3 class="font-oswald text-2xl font-semibold mb-4">Group Training</h3>
+              <ul class="space-y-4 text-gray-300 text-sm sm:text-base">
+                <li class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 border-b border-gray-700/60 pb-3">
+                  <div>
+                    <p class="font-medium">12 &amp; under</p>
+                    <p class="text-xs text-gray-400">Twice a week &middot; 5:00&ndash;6:00 PM EST &middot; Max 10</p>
+                  </div>
+                  <p class="font-semibold text-yellow-400">$150 / month</p>
+                </li>
+                <li class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 border-b border-gray-700/60 pb-3">
+                  <div>
+                    <p class="font-medium">13&ndash;17</p>
+                    <p class="text-xs text-gray-400">Twice a week &middot; 6:00&ndash;7:00 PM EST &middot; Max 10</p>
+                  </div>
+                  <p class="font-semibold text-yellow-400">$175 / month</p>
+                </li>
+                <li class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+                  <div>
+                    <p class="font-medium">18+</p>
+                    <p class="text-xs text-gray-400">Twice a week &middot; 7:00&ndash;8:00 PM EST &middot; Max 10</p>
+                  </div>
+                  <p class="font-semibold text-yellow-400">$200 / month</p>
+                </li>
+              </ul>
+            </div>
+
+            <!-- 1:1 Personal & Boxer Training -->
+            <div class="bg-gray-800/80 border border-gray-700 rounded-2xl p-6 sm:p-8 shadow-lg shadow-black/40 flex flex-col gap-6">
+              <div>
+                <h3 class="font-oswald text-2xl font-semibold mb-3">1:1 Personal Training</h3>
+                <ul class="space-y-3 text-gray-300 text-sm sm:text-base">
+                  <li class="flex items-baseline justify-between gap-2">
+                    <span class="font-medium">6&ndash;17</span>
+                    <span class="font-semibold text-yellow-400">$150 / hour</span>
+                  </li>
+                  <li class="flex items-baseline justify-between gap-2">
+                    <span class="font-medium">18+</span>
+                    <span class="font-semibold text-yellow-400">$300 / hour</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="border-t border-gray-700 pt-4">
+                <h3 class="font-oswald text-2xl font-semibold mb-2">Boxer Training</h3>
+                <p class="text-gray-300 text-sm sm:text-base mb-2">
+                  Boxer-specific training and camp preparation are scheduled by consultation.
+                </p>
+                <p class="text-xs text-gray-400 mb-1">
+                  Email <a href="mailto:BoxingPHD@gmail.com" class="text-yellow-400 hover:text-yellow-300">BoxingPHD@gmail.com</a>
+                  to schedule your consultation.
+                </p>
+                <p class="text-xs text-gray-500">
+                  Final pricing and schedule are confirmed after your consultation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- The Gym Section -->
       <section
         id="gym"
@@ -395,8 +563,11 @@
               The Gym
             </p>
             <h2 class="font-oswald text-3xl sm:text-4xl font-semibold">
-              Where The Work Gets Done
+              Technique: Timeless Foundation
             </h2>
+            <p class="text-gray-400 mt-2 max-w-xl">
+              Where the work gets done—world class fitness and elite boxing level training under one roof.
+            </p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-10">
@@ -754,6 +925,40 @@
           link.addEventListener('click', closeMenu);
         });
       })();
+
+      // Visuals carousel (Swiper) – init after Swiper script loads
+      function initVisualsCarousel() {
+        if (typeof Swiper === 'undefined') { window.setTimeout(initVisualsCarousel, 50); return; }
+        var el = document.querySelector('.visuals-swiper');
+        if (!el) return;
+        new Swiper('.visuals-swiper', {
+          loop: true,
+          autoplay: { delay: 4000, disableOnInteraction: false },
+          pagination: { el: '.swiper-pagination', clickable: true },
+          navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+          slidesPerView: 1,
+          spaceBetween: 0,
+          grabCursor: true,
+          effect: 'slide',
+          breakpoints: { 640: { slidesPerView: 1 }, 1024: { slidesPerView: 1 } },
+          on: {
+            slideChange: function () {
+              el.querySelectorAll('video').forEach(function (v) { v.pause(); });
+              var active = el.querySelector('.swiper-slide-active video');
+              if (active) { active.play().catch(function () {}); }
+            },
+            init: function () {
+              var first = el.querySelector('.swiper-slide-active video');
+              if (first) { first.play().catch(function () {}); }
+            }
+          }
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVisualsCarousel);
+      } else {
+        initVisualsCarousel();
+      }
     </script>
   </body>
 </html>
