@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lamon Brewster | Hall of Fame Gallery</title>
+    <meta
+      name="description"
+      content="Hall of Fame style gallery of Lamon Brewster in action—training clips, championship moments, and behind-the-scenes visuals."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script>
+      tailwind = {
+        config: {
+          theme: {
+            extend: {
+              fontFamily: {
+                oswald: ["Oswald", "sans-serif"],
+                roboto: ["Roboto", "sans-serif"],
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body class="bg-gray-900 text-white font-roboto overflow-x-hidden">
+    <!-- Navbar (simplified, links back home + gallery active) -->
+    <nav class="fixed top-0 inset-x-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 min-w-0">
+        <a href="index.html#home" class="min-w-0 flex-shrink-0">
+          <span
+            class="font-oswald text-lg sm:text-xl tracking-[0.2em] sm:tracking-[0.25em] uppercase text-yellow-500 truncate block"
+          >
+            Lamon Brewster
+          </span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium flex-shrink-0">
+          <a href="index.html#home" class="hover:text-yellow-400 transition-colors">Home</a>
+          <a href="index.html#visuals" class="hover:text-yellow-400 transition-colors">Visuals</a>
+          <span class="text-yellow-400">Gallery</span>
+          <a href="index.html#contact" class="hover:text-yellow-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="pt-20 pb-16 min-w-0">
+      <!-- Hero / Intro -->
+      <section class="py-10 sm:py-14 bg-gradient-to-b from-black via-gray-900 to-gray-950 border-b border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p class="text-xs uppercase tracking-[0.4em] text-yellow-500 mb-3">
+            Hall of Fame
+          </p>
+          <h1 class="font-oswald text-3xl sm:text-4xl md:text-5xl font-semibold mb-3">
+            Lamon Brewster Gallery
+          </h1>
+          <p class="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+            Clips from training, the gym, and championship moments. A hall-of-fame look at the work, the mindset,
+            and the legacy.
+          </p>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="py-10 sm:py-14">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <h2 class="font-oswald text-xl sm:text-2xl font-semibold">
+              In Action
+            </h2>
+            <a
+              href="index.html#visuals"
+              class="text-xs sm:text-sm text-gray-300 hover:text-yellow-400 transition-colors"
+            >
+              Back to site visuals
+            </a>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Card: clip1 -->
+            <button
+              type="button"
+              class="group relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-900/60 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-black/60 hover:-translate-y-1 transition transform text-left"
+              data-clip-src="assets/clip1.mp4"
+              data-clip-label="Training Clip 1"
+            >
+              <div class="aspect-video bg-black flex items-center justify-center">
+                <img
+                    src="assets/clip1-thumb.png"
+                    alt="Training clip 1 thumbnail"
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span
+                  class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-black/60 text-yellow-400 border border-yellow-500/70 group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-400 transition"
+                >
+                  <i class="fas fa-play text-xl translate-x-[1px]"></i>
+                </span>
+              </div>
+              <div class="px-4 py-3 border-t border-gray-800">
+                <p class="font-oswald text-sm tracking-[0.16em] uppercase text-gray-300">
+                  Lamon Brewster - Relentless Power
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Technique, power, and focus.
+                </p>
+              </div>
+            </button>
+
+            <!-- Card: clip2 -->
+            <button
+              type="button"
+              class="group relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-900/60 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-black/60 hover:-translate-y-1 transition transform text-left"
+              data-clip-src="assets/clip2.mp4"
+              data-clip-label="Training Clip 2"
+            >
+              <div class="aspect-video bg-black flex items-center justify-center">
+                <img
+                  src="assets/clip2-thumb.png"
+                  alt="Training clip 2 thumbnail"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span
+                  class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-black/60 text-yellow-400 border border-yellow-500/70 group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-400 transition"
+                >
+                  <i class="fas fa-play text-xl translate-x-[1px]"></i>
+                </span>
+              </div>
+              <div class="px-4 py-3 border-t border-gray-800">
+                <p class="font-oswald text-sm tracking-[0.16em] uppercase text-gray-300">
+                  Mike Epps Gets in the Ring with Boxing Champ Laymon Brewster at Right Jab Grand Opening
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Grand Opening; Mike Epps; Right Jab Boxing Gym; Indianapolis, IN;
+                </p>
+              </div>
+            </button>
+
+            <!-- Card: clip3 -->
+            <button
+              type="button"
+              class="group relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-900/60 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-black/60 hover:-translate-y-1 transition transform text-left"
+              data-clip-src="assets/clip3.mp4"
+              data-clip-label="Training Clip 3"
+            >
+              <div class="aspect-video bg-black flex items-center justify-center">
+                <img
+                  src="assets/clip3-thumb.png"
+                  alt="Training clip 3 thumbnail"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span
+                  class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-black/60 text-yellow-400 border border-yellow-500/70 group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-400 transition"
+                >
+                  <i class="fas fa-play text-xl translate-x-[1px]"></i>
+                </span>
+              </div>
+              <div class="px-4 py-3 border-t border-gray-800">
+                <p class="font-oswald text-sm tracking-[0.16em] uppercase text-gray-300">
+                  Lamon Brewster on How to Throw a powerful hook (The Crank)
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Boxing; Hook; The Crank; Lamon Brewster;
+                </p>
+              </div>
+            </button>
+
+            <!-- Card: clip4 -->
+            <button
+              type="button"
+              class="group relative rounded-2xl overflow-hidden border border-gray-700 bg-gray-900/60 shadow-lg shadow-black/40 hover:shadow-xl hover:shadow-black/60 hover:-translate-y-1 transition transform text-left"
+              data-clip-src="assets/clip4.mp4"
+              data-clip-label="Training Clip 4"
+            >
+              <div class="aspect-video bg-black flex items-center justify-center">
+                <img
+                  src="assets/clip4-thumb.png"
+                  alt="Training clip 4 thumbnail"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <span
+                  class="inline-flex items-center justify-center h-14 w-14 rounded-full bg-black/60 text-yellow-400 border border-yellow-500/70 group-hover:bg-yellow-500 group-hover:text-black group-hover:border-yellow-400 transition"
+                >
+                  <i class="fas fa-play text-xl translate-x-[1px]"></i>
+                </span>
+              </div>
+              <div class="px-4 py-3 border-t border-gray-800">
+                <p class="font-oswald text-sm tracking-[0.16em] uppercase text-gray-300">
+                  The Right Jab Boxing Gym Indianapolis, IN
+                </p>
+                <p class="text-xs text-gray-500 mt-1">
+                  Boxing Gym
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal Player -->
+    <div
+      id="gallery-modal"
+      class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm"
+      aria-hidden="true"
+    >
+      <div class="relative max-w-3xl w-full mx-4">
+        <button
+          type="button"
+          id="gallery-modal-close"
+          class="absolute -top-10 right-0 text-gray-300 hover:text-yellow-400 transition-colors text-2xl"
+          aria-label="Close video"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="aspect-video bg-black rounded-2xl overflow-hidden border border-gray-700 shadow-2xl shadow-black/60">
+          <video
+            id="gallery-modal-video"
+            class="w-full h-full object-contain bg-black"
+            controls
+            playsinline
+          ></video>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var modal = document.getElementById('gallery-modal');
+        var modalVideo = document.getElementById('gallery-modal-video');
+        var modalClose = document.getElementById('gallery-modal-close');
+        if (!modal || !modalVideo) return;
+
+        function openModal(src, label) {
+          if (!src) return;
+          modalVideo.src = src;
+          if (label) modalVideo.setAttribute('aria-label', label);
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          var p = modalVideo.play();
+          if (p && typeof p.catch === 'function') p.catch(function () {});
+        }
+
+        function closeModal() {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          try { modalVideo.pause(); } catch (e) {}
+          modalVideo.removeAttribute('src');
+        }
+
+        document.querySelectorAll('[data-clip-src]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            openModal(btn.getAttribute('data-clip-src'), btn.getAttribute('data-clip-label') || '');
+          });
+        });
+
+        if (modalClose) {
+          modalClose.addEventListener('click', closeModal);
+        }
+
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+
