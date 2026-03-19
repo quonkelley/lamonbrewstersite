@@ -73,64 +73,8 @@
             Lamon Brewster
           </span>
         </a>
-        <div class="hidden md:flex items-center space-x-8 text-sm font-medium flex-shrink-0">
-          <a
-            href="#home"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            About
-          </a>
-          <a
-            href="#services"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Training Services
-          </a>
-          <a
-            href="#gym"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            The Gym
-          </a>
-          <a
-            href="#coffee-line"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Coffee Line
-          </a>
-          <a
-            href="#brewsters-place"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Brewster&apos;s Place
-          </a>
-          <a
-            href="#visuals"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Visuals
-          </a>
-          <a
-            href="gallery.html"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Gallery
-          </a>
-          <a
-            href="#contact"
-            class="hover:text-yellow-400 transition-colors"
-          >
-            Contact
-          </a>
-        </div>
-        <!-- Mobile: hamburger button -->
-        <div class="md:hidden flex-shrink-0 ml-2">
+        <!-- Hamburger (desktop + mobile) -->
+        <div class="flex-shrink-0 ml-2">
           <button
             type="button"
             id="mobile-menu-button"
@@ -144,14 +88,29 @@
           </button>
         </div>
       </div>
-      <!-- Mobile dropdown menu -->
-      <div
-        id="mobile-menu"
-        class="md:hidden hidden absolute top-full left-0 right-0 bg-gray-900 border-b border-gray-800 shadow-xl z-40"
-        role="dialog"
-        aria-label="Navigation menu"
+    </nav>
+
+    <!-- Drawer menu (desktop + mobile) -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 z-[100]"
+      role="dialog"
+      aria-label="Navigation menu"
+    >
+      <button
+        type="button"
+        id="mobile-menu-backdrop"
+        class="absolute inset-0 bg-black/70 z-0"
+        aria-label="Close menu"
+      ></button>
+      <nav
+        class="absolute top-0 right-0 h-full w-[86vw] max-w-sm bg-gray-950 border-l border-gray-800 shadow-2xl shadow-black/60 px-4 py-5 overflow-y-auto z-10"
+        aria-label="Site navigation links"
       >
-        <nav class="px-4 py-4 flex flex-col gap-1 max-h-[70vh] overflow-y-auto">
+        <p class="text-xs uppercase tracking-[0.35em] text-yellow-500 mb-3">
+          Menu
+        </p>
+        <div class="flex flex-col gap-1">
           <a href="#home" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Home</a>
           <a href="#about" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">About</a>
           <a href="#services" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Training Services</a>
@@ -161,9 +120,9 @@
           <a href="#visuals" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Visuals</a>
           <a href="gallery.html" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Gallery</a>
           <a href="#contact" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Contact</a>
-        </nav>
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </div>
 
     <main class="pt-16 min-w-0">
       <!-- Hero Section -->
@@ -978,6 +937,7 @@
       (function () {
         var button = document.getElementById('mobile-menu-button');
         var menu = document.getElementById('mobile-menu');
+        var backdrop = document.getElementById('mobile-menu-backdrop');
         var iconOpen = document.getElementById('mobile-menu-icon-open');
         var iconClose = document.getElementById('mobile-menu-icon-close');
         if (!button || !menu) return;
@@ -1002,8 +962,14 @@
           else closeMenu();
         });
 
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
+
         menu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
           link.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !menu.classList.contains('hidden')) closeMenu();
         });
       })();
 

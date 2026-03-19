@@ -43,7 +43,7 @@
   </head>
 
   <body class="bg-gray-900 text-white font-roboto overflow-x-hidden">
-    <!-- Navbar (simplified, links back home + gallery active) -->
+    <!-- Navbar -->
     <nav class="fixed top-0 inset-x-0 z-50 bg-gray-900/90 backdrop-blur border-b border-gray-800">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 min-w-0">
         <a href="index.html#home" class="min-w-0 flex-shrink-0">
@@ -53,14 +53,54 @@
             Lamon Brewster
           </span>
         </a>
-        <div class="hidden md:flex items-center space-x-8 text-sm font-medium flex-shrink-0">
-          <a href="index.html#home" class="hover:text-yellow-400 transition-colors">Home</a>
-          <a href="index.html#visuals" class="hover:text-yellow-400 transition-colors">Visuals</a>
-          <span class="text-yellow-400">Gallery</span>
-          <a href="index.html#contact" class="hover:text-yellow-400 transition-colors">Contact</a>
+        <!-- Hamburger (desktop + mobile) -->
+        <div class="flex-shrink-0 ml-2">
+          <button
+            type="button"
+            id="mobile-menu-button"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+            class="p-2 rounded-lg text-gray-300 hover:text-yellow-400 hover:bg-gray-800 transition"
+          >
+            <i id="mobile-menu-icon-open" class="fas fa-bars text-xl"></i>
+            <i id="mobile-menu-icon-close" class="fas fa-times text-xl hidden" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </nav>
+
+    <!-- Drawer menu (desktop + mobile) -->
+    <div
+      id="mobile-menu"
+      class="hidden fixed inset-0 z-[100]"
+      role="dialog"
+      aria-label="Navigation menu"
+    >
+      <button
+        type="button"
+        id="mobile-menu-backdrop"
+        class="absolute inset-0 bg-black/70 z-0"
+        aria-label="Close menu"
+      ></button>
+      <nav
+        class="absolute top-0 right-0 h-full w-[86vw] max-w-sm bg-gray-950 border-l border-gray-800 shadow-2xl shadow-black/60 px-4 py-5 overflow-y-auto z-10"
+        aria-label="Site navigation links"
+      >
+        <p class="text-xs uppercase tracking-[0.35em] text-yellow-500 mb-3">
+          Menu
+        </p>
+        <div class="flex flex-col gap-1">
+          <a href="index.html#home" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Home</a>
+          <a href="index.html#about" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">About</a>
+          <a href="index.html#services" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Training Services</a>
+          <a href="index.html#gym" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">The Gym</a>
+          <a href="index.html#visuals" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Visuals</a>
+          <span class="py-3 px-3 rounded-lg bg-yellow-500/10 text-yellow-300 font-medium">Gallery</span>
+          <a href="index.html#contact" class="mobile-nav-link py-3 px-3 rounded-lg hover:bg-gray-800 hover:text-yellow-400 text-gray-200 font-medium">Contact</a>
+        </div>
+      </nav>
+    </div>
 
     <main class="pt-20 pb-16 min-w-0">
       <!-- Hero / Intro -->
@@ -255,6 +295,40 @@
 
     <script>
       (function () {
+        var button = document.getElementById('mobile-menu-button');
+        var menu = document.getElementById('mobile-menu');
+        var backdrop = document.getElementById('mobile-menu-backdrop');
+        var iconOpen = document.getElementById('mobile-menu-icon-open');
+        var iconClose = document.getElementById('mobile-menu-icon-close');
+        if (!button || !menu) return;
+
+        function openMenu() {
+          menu.classList.remove('hidden');
+          button.setAttribute('aria-expanded', 'true');
+          button.setAttribute('aria-label', 'Close menu');
+          if (iconOpen) iconOpen.classList.add('hidden');
+          if (iconClose) iconClose.classList.remove('hidden');
+        }
+        function closeMenu() {
+          menu.classList.add('hidden');
+          button.setAttribute('aria-expanded', 'false');
+          button.setAttribute('aria-label', 'Open menu');
+          if (iconOpen) iconOpen.classList.remove('hidden');
+          if (iconClose) iconClose.classList.add('hidden');
+        }
+
+        button.addEventListener('click', function () {
+          if (menu.classList.contains('hidden')) openMenu();
+          else closeMenu();
+        });
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
+        menu.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+          link.addEventListener('click', closeMenu);
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape' && !menu.classList.contains('hidden')) closeMenu();
+        });
+
         var modal = document.getElementById('gallery-modal');
         var modalVideo = document.getElementById('gallery-modal-video');
         var modalClose = document.getElementById('gallery-modal-close');
